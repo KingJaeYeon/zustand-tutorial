@@ -1,9 +1,10 @@
 'use client'
 
-import {dec, inc, setText, useCountStore} from "@/store/countStore";
+import {dec, inc, setText, useCountStore} from "@/store/countStore-v1";
+import {useIndexStore} from "@/store/index-store";
 
 export default function Count() {
-    const { count, text } = useCountStore();
+    const { count, text } = useIndexStore((state)=>state)
     return (
             <div className="counter">
                 <div>{count}</div>
